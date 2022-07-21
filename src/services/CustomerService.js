@@ -1,28 +1,28 @@
-import axios from 'axios'
+import axios from "axios";
 
-const CUSTOMER_BASE_REST_API_URL = 'http://localhost:8080/api/v1/customers';
+const CUSTOMER_BASE_REST_API_URL =
+  "https://crud-sumtechlabs-challenge.herokuapp.com/api/v1/customers";
 
-class CustomerService{
+class CustomerService {
+  getAllCustomers() {
+    return axios.get(CUSTOMER_BASE_REST_API_URL);
+  }
 
-    getAllCustomers(){
-        return axios.get(CUSTOMER_BASE_REST_API_URL)
-    }
+  createCustomer(customer) {
+    return axios.post(CUSTOMER_BASE_REST_API_URL, customer);
+  }
 
-    createCustomer(customer){
-        return axios.post(CUSTOMER_BASE_REST_API_URL, customer)
-    }
+  getCustomerById(customerId) {
+    return axios.get(CUSTOMER_BASE_REST_API_URL + "/" + customerId);
+  }
 
-    getCustomerById(customerId){
-        return axios.get(CUSTOMER_BASE_REST_API_URL + '/' + customerId);
-    }
+  updateCustomer(customerId, customer) {
+    return axios.put(CUSTOMER_BASE_REST_API_URL + "/" + customerId, customer);
+  }
 
-    updateCustomer(customerId, customer){
-        return axios.put(CUSTOMER_BASE_REST_API_URL + '/' +customerId, customer);
-    }
-
-    deleteCustomer(customerId){
-        return axios.delete(CUSTOMER_BASE_REST_API_URL + '/' + customerId);
-    }
+  deleteCustomer(customerId) {
+    return axios.delete(CUSTOMER_BASE_REST_API_URL + "/" + customerId);
+  }
 }
 
 export default new CustomerService();

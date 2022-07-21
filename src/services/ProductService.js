@@ -1,28 +1,28 @@
-import axios from 'axios'
+import axios from "axios";
 
-const PRODUCT_BASE_REST_API_URL = 'http://localhost:8080/api/v1/products';
+const PRODUCT_BASE_REST_API_URL =
+  "https://crud-sumtechlabs-challenge.herokuapp.com/api/v1/products";
 
-class ProductService{
+class ProductService {
+  getAllProducts() {
+    return axios.get(PRODUCT_BASE_REST_API_URL);
+  }
 
-    getAllProducts(){
-        return axios.get(PRODUCT_BASE_REST_API_URL)
-    }
+  createProduct(product) {
+    return axios.post(PRODUCT_BASE_REST_API_URL, product);
+  }
 
-    createProduct(product){
-        return axios.post(PRODUCT_BASE_REST_API_URL, product)
-    }
+  getProductById(productId) {
+    return axios.get(PRODUCT_BASE_REST_API_URL + "/" + productId);
+  }
 
-    getProductById(productId){
-        return axios.get(PRODUCT_BASE_REST_API_URL + '/' + productId);
-    }
+  updateProduct(productId, product) {
+    return axios.put(PRODUCT_BASE_REST_API_URL + "/" + productId, product);
+  }
 
-    updateProduct(productId, product){
-        return axios.put(PRODUCT_BASE_REST_API_URL + '/' +productId, product);
-    }
-
-    deleteProduct(productId){
-        return axios.delete(PRODUCT_BASE_REST_API_URL + '/' + productId);
-    }
+  deleteProduct(productId) {
+    return axios.delete(PRODUCT_BASE_REST_API_URL + "/" + productId);
+  }
 }
 
 export default new ProductService();

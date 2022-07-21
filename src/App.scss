@@ -245,3 +245,40 @@ iframe{
     font-size: 12px;
   }
 }
+//========TABLES========\\
+.table{
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: $box-shadow;
+  & thead{
+    background-color: #F9FAFB;
+    color: $blue !important;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  & tbody{
+    background-color: $white;
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: 400;
+  }
+}
+
+h2{
+  text-transform: uppercase;
+  font-weight: bolder!important;
+}
+
+//========BREAKPOINTS========\\
+
+.table,
+.table .btn,
+.table th{
+  @include tablet{
+    font-size: 80%;
+  }
+  @include mobile{
+    font-size: 60%;
+  }
+}
