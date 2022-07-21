@@ -1,6 +1,19 @@
 # CRUD BASIC WebApp - SumTech Labs Challenge
+*3 entities*
+- Products
+- Costumers
+- Operations
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+*Made with*
+- HTML
+- Sass
+- Javascript
+- React.js
+- Chart.js
+- Bootstrap
+
 
 **DEPLOY** https://gallardo-sumtech.netlify.app/
 
