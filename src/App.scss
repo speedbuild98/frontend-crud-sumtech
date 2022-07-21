@@ -1,0 +1,247 @@
+@use './scss/' as *;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body{
+    font-family: $font-family;
+    font-weight: 400;
+    line-height: 1.5;
+    //cursor: url("./assets/cursor.png"), default;
+    //cursor: url("./assets/cursor.png"), auto;
+    //cursor: url("./assets/cursor.png"), pointer;
+
+
+    background-color: #F9FAFB;
+    color: $txt-color;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+    cursor: pointer;
+}
+
+button,
+input {
+    outline: 0;
+    padding: 8px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+iframe{
+    border: 0;
+}
+
+.container{
+    max-width: 1660px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+//========HEADER========\\
+.header{
+
+  &__nav{
+    @include flex (center, space-around,row);
+    background-color: $grey3;
+    padding: $basic;
+    height: 80px;
+    z-index: 10;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    transition: all .5s ease-in-out;
+  
+    &--open{
+      border-bottom: 5px solid $red;
+    }
+    
+    &--closed{
+      border-bottom: 5px solid $blue;
+    }
+
+    &-img{
+      width: 200px;
+    }
+
+    &-icon{
+      color: $red;
+      width: 35px;
+      height: 35px;
+      cursor: pointer;
+      transition: all .2s ease-in-out;
+
+      &--open{
+        transform: rotate(90deg);
+        color: $blue;
+      }
+
+      &:hover{
+        color: $blue;
+      }
+    }
+  } 
+  
+  &__menu{
+    z-index: 5;
+    position: absolute;
+    right: 0;
+    transition: all .3s ease-in;
+    top: 0;
+    padding-top: 90px;
+
+    &__content{
+      @include flex (center, space-around,column);
+
+      &--hidden{
+        display: none;
+      }
+
+      &--show{
+        display: flex;
+      }
+
+      &-title{
+        color: $white;
+        font-weight: 900;
+        margin: 0 auto;
+        font-size: 30px;
+        border-bottom: 3px solid $grey1;
+        padding: $basic;
+      }
+
+      &-button{
+        background-color: $blue;
+        border: none;
+        border-radius: $basic;
+        color: $white;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all .2s ease-in;
+        margin-top: $basic;
+
+        &-link{
+          color: $white;
+          text-decoration: none;
+          padding: 2px;
+
+          &:hover{
+            color:unset;
+          }
+        }
+
+        &:hover{
+          background-color: $red;
+        }
+      }
+
+      &-link{
+        text-decoration: none;
+        color: $white;
+        font-weight: 500;
+        padding:$basic;
+        transition: all .2s ease-in-out;
+
+        &:hover{
+          color: $red;
+          transform: scale(1.02);
+        }
+      }
+    }
+  }
+
+  &__menu--show{
+    height: 100%;
+    background-color: $grey3;
+    box-shadow: $box-shadow;
+    position: absolute;
+    content-visibility: visible;
+    border-left: 4px solid $grey3;
+    width: 100%;
+  }
+
+  &__menu--hidden{
+    height: 100%;
+    width: 0;
+    background-color: $blue;
+    content-visibility: hidden;
+  }
+}
+//========FOOTER========\\
+.footer{
+  @include flex (center, center, column);
+  width: 100%;
+  color: $white;
+  border-radius: 50px 50px 0 0;
+  position: relative;
+  position:absolute; 
+  left:0px; 
+  right:0px; 
+  bottom: 0;
+  z-index:0;
+  border-bottom: 5px solid $blue;
+
+  &__icon{
+    width: 50px;
+    height: 50px;
+    color: $blue;
+    cursor: pointer;
+  }
+
+  &__img{
+    height: 50px;
+    padding: $basic;
+  }
+
+  &__span{
+    padding: $basic;
+    height: 50px;
+    font-weight: bold;
+    border-bottom: 2px solid $white;
+    border-top: 2px solid $white;
+    text-decoration: none;
+    animation: colorChange 4s infinite ease-in-out;
+    color: unset;
+
+    &:hover{
+      animation: shake .5s infinite;
+      color: $white;
+      cursor: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/happy.png"), auto;
+    }
+
+    @keyframes colorChange {
+      0%   {color: $blue;}
+      50%  {color: $red;}
+      100% {color: $blue;}
+    }
+
+    @keyframes shake {
+      0%   {transform: translateX(10px); border-bottom: 2px solid $red; border-top:2px solid $blue;}
+      50%  {transform: translateX(-10px); border-bottom: 2px solid $blue; border-top:2px solid $red;}
+      100% {transform: translateX(10px); border-bottom: 2px solid $red; border-top:2px solid $blue;}
+    }
+  }
+
+  &__p1{
+    color: $red;
+    font-size: 12px;
+    margin-top: $basic;
+  }
+
+  &__p2{
+    color: $blue;
+    font-size: 12px;
+  }
+}

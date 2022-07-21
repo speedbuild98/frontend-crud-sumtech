@@ -1,0 +1,33 @@
+//Colors------------------------------
+
+//Basic
+$white:#ffffff;
+$black:#000000;
+
+//Grey/Neutral
+$grey1:#484646;
+$grey2:#2D2D2D;
+$grey3:#212529;
+
+//Primary
+$red:#FF4D22;
+$blue:#0D6EFD;
+
+//Mains
+$txt-color:#414141;
+$bg-color:#ffffff;
+
+
+//Shadows------------------------------
+$box-shadow:rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+//Fonts------------------------------
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+$font-family: 'Montserrat', sans-serif;
+
+//Widths------------------------------
+$mobile-width: 600px;
+$tablet-width: 1024px;
+
+//Grid------------------------------
+$basic:8px;
