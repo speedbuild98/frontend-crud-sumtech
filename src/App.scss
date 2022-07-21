@@ -291,7 +291,6 @@ h2{
 }
 
 .table,
-.table .btn,
 .table th,
 .table tbody{
   @include tablet{
@@ -299,5 +298,14 @@ h2{
   }
   @include mobile{
     font-size: 60%;
+  }
+}
+
+.table .btn{
+  @include tablet{
+    font-size: 90%;
+  }
+  @include mobile{
+    font-size: 80%;
   }
 }
