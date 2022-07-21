@@ -61,6 +61,7 @@ const AddOperation = () => {
     if (id) {
       OperationService.updateOperation(id, operation)
         .then((response) => {
+          console.log(response.data);
           history.push("/operations");
         })
         .catch((error) => {

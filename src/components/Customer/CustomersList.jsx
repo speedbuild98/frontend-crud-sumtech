@@ -65,8 +65,7 @@ const CustomersList = () => {
                 </Link>
                 <button
                   className="btn btn-danger"
-                  onClick={() => deleteCustomer(customer.id)}
-                  style={{ margin: "10px" }}
+                  onClick={() => deleteCustomer(customer.id)} 
                 >
                   {" "}
                   Delete

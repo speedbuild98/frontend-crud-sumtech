@@ -68,7 +68,6 @@ const ProductsList = () => {
                 <button
                   className="btn btn-danger"
                   onClick={() => deleteProduct(product.id)}
-                  style={{ margin: "10px" }}
                 >
                   {" "}
                   Delete

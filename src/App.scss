@@ -251,6 +251,9 @@ iframe{
   border-radius: 8px;
   overflow: hidden;
   box-shadow: $box-shadow;
+  margin: 0 auto;
+  max-width: 90vw !important;
+
   & thead{
     background-color: #F9FAFB;
     color: $blue !important;
@@ -268,9 +271,23 @@ iframe{
 h2{
   text-transform: uppercase;
   font-weight: bolder!important;
+  margin: 0 auto;
+}
+
+.btn{
+  margin: 3px auto;
 }
 
 //========BREAKPOINTS========\\
+
+.btn-primary{
+  @include tablet{
+    font-size: 80%!important;
+  }
+  @include mobile{
+    font-size: 60%!important;
+  }
+}
 
 .table,
 .table .btn,

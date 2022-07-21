@@ -62,16 +62,9 @@ const OperationsList = () => {
               <td> {operation.quantity} </td>
               <td> ${operation.total} </td>
               <td>
-                <Link
-                  className="btn btn-info text-white"
-                  to={`/edit-operation/${operation.id}`}
-                >
-                  Update
-                </Link>
                 <button
                   className="btn btn-danger"
                   onClick={() => deleteOperation(operation.id)}
-                  style={{ margin: "10px" }}
                 >
                   {" "}
                   Delete
